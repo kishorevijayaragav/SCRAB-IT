@@ -1,0 +1,16 @@
+{
+  "name": "scrapit-individual",
+  "version": "1.0.0",
+  "description": "SCRAPIT \u2014 AI-Powered Scrap Management Platform",
+  "main": "SCRAPIT-FINAL-LAST-VERSION/server.js",
+  "scripts": {
+    "start": "node SCRAPIT-FINAL-LAST-VERSION/server.js",
+    "server": "node SCRAPIT-FINAL-LAST-VERSION/server.js",
+    "dev": "node SCRAPIT-FINAL-LAST-VERSION/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}

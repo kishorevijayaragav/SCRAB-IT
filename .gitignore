@@ -1,0 +1,20 @@
+# Node
+node_modules/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Flutter build artifacts (handled by scrapit_flutter/.gitignore too)
+scrapit_flutter/.dart_tool/
+scrapit_flutter/.pub-cache/
+scrapit_flutter/build/
+
+# Gemini/AGY
+.gemini/

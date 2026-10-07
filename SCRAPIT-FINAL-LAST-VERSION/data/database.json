@@ -1,0 +1,486 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Aditya Kumar",
+      "role": "Scrap Manager",
+      "email": "admin@scrapit.com",
+      "password": "scrapit123",
+      "phone": "+91 98765 43210",
+      "business": "Kumar Scrap Traders",
+      "gst": "33ABCDE1234F1Z5",
+      "address": "123, Green Street, Chennai, Tamil Nadu – 600001"
+    }
+  ],
+  "tokens": {
+    "e7ba0a57f6153187e2976fa751decffbc46dcc3ac733065e": 1,
+    "c004acd8659d791ed2c0119e6f0c2713917323b1f845163b": 1,
+    "3cbeae6c85b541bb45d334abc0f9dbb0add8af27125a3195": 1,
+    "7659b744376aedcae9151dfa6147ad9df50b99cfc0d118ef": 1,
+    "ce7947bf0084b74452177592803063642ab73a3885e9bc9e": 1
+  },
+  "inventory": [
+    {
+      "id": "inv17895555535996mc5",
+      "material": "Brass",
+      "category": "Metal",
+      "quantity": 3.2,
+      "pricePerKg": 480,
+      "estimatedValue": 1536,
+      "date": "16 Sept 2026",
+      "image": "/uploads/b889909ad4b45b5568c8c2d6.jpg",
+      "confidence": 94
+    },
+    {
+      "id": "inv1",
+      "material": "Aluminium",
+      "category": "Metal",
+      "quantity": 2,
+      "pricePerKg": 180,
+      "estimatedValue": 360,
+      "date": "12 May 2026",
+      "image": null,
+      "confidence": 94
+    },
+    {
+      "id": "inv2",
+      "material": "Copper",
+      "category": "Metal",
+      "quantity": 1.5,
+      "pricePerKg": 720,
+      "estimatedValue": 1080,
+      "date": "10 May 2026",
+      "image": null,
+      "confidence": 92
+    },
+    {
+      "id": "inv3",
+      "material": "Iron",
+      "category": "Metal",
+      "quantity": 5,
+      "pricePerKg": 40,
+      "estimatedValue": 200,
+      "date": "08 May 2026",
+      "image": null,
+      "confidence": 90
+    },
+    {
+      "id": "inv4",
+      "material": "Plastic",
+      "category": "Plastic",
+      "quantity": 3,
+      "pricePerKg": 30,
+      "estimatedValue": 90,
+      "date": "07 May 2026",
+      "image": null,
+      "confidence": 91
+    },
+    {
+      "id": "inv5",
+      "material": "Paper",
+      "category": "Paper",
+      "quantity": 8,
+      "pricePerKg": 15,
+      "estimatedValue": 120,
+      "date": "05 May 2026",
+      "image": null,
+      "confidence": 89
+    }
+  ],
+  "history": [
+    {
+      "id": "h1791376543469lw8w",
+      "group": "Today",
+      "time": "06:05 pm",
+      "ts": 1791376543469,
+      "type": "scan",
+      "name": "Iron",
+      "qty": 1,
+      "value": 40
+    },
+    {
+      "id": "h17909931197893ohg",
+      "group": "Today",
+      "time": "07:35 am",
+      "ts": 1790993119789,
+      "type": "inventory",
+      "name": "Copper",
+      "qty": -4,
+      "value": -3200
+    },
+    {
+      "id": "h17909931197834o6x",
+      "group": "Today",
+      "time": "07:35 am",
+      "ts": 1790993119783,
+      "type": "inventory",
+      "name": "Copper",
+      "qty": 4,
+      "value": 3200
+    },
+    {
+      "id": "h1790993119773onj0",
+      "group": "Today",
+      "time": "07:35 am",
+      "ts": 1790993119773,
+      "type": "inventory",
+      "name": "Copper",
+      "qty": 2.5,
+      "value": 1750
+    },
+    {
+      "id": "h17909931197283xy1",
+      "group": "Today",
+      "time": "07:35 am",
+      "ts": 1790993119728,
+      "type": "scan",
+      "name": "E-Waste",
+      "qty": 4.9,
+      "value": 588
+    },
+    {
+      "id": "h17895555535999w3f",
+      "group": "Today",
+      "time": "04:15 pm",
+      "ts": 1789555553599,
+      "type": "inventory",
+      "name": "Brass",
+      "qty": 3.2,
+      "value": 1536
+    },
+    {
+      "id": "h1789555544151eo3h",
+      "group": "Today",
+      "time": "04:15 pm",
+      "ts": 1789555544151,
+      "type": "scan",
+      "name": "Brass",
+      "qty": 3.2,
+      "value": 1536
+    },
+    {
+      "id": "h1789475562052aaci",
+      "group": "Today",
+      "time": "06:02 pm",
+      "ts": 1789475562052,
+      "type": "scan",
+      "name": "Paper",
+      "qty": 2.7,
+      "value": 41
+    },
+    {
+      "id": "h1",
+      "type": "scan",
+      "name": "Aluminium",
+      "qty": 2,
+      "value": 360,
+      "group": "Today",
+      "time": "09:45 AM",
+      "ts": 1789470002551
+    },
+    {
+      "id": "h2",
+      "type": "inventory",
+      "name": "Copper",
+      "qty": 1.5,
+      "value": 1080,
+      "group": "Today",
+      "time": "08:30 AM",
+      "ts": 1789466402551
+    },
+    {
+      "id": "h3",
+      "type": "scan",
+      "name": "Plastic",
+      "qty": 1.5,
+      "value": 45,
+      "group": "Yesterday",
+      "time": "06:20 PM",
+      "ts": 1789387202551
+    },
+    {
+      "id": "h4",
+      "type": "transaction",
+      "name": "Aluminium",
+      "qty": 2,
+      "value": 360,
+      "group": "Today",
+      "time": "09:50 AM",
+      "ts": 1789470602551
+    }
+  ],
+  "notifications": [
+    {
+      "id": "n179137654346920jd",
+      "title": "New scan completed",
+      "body": "Iron detected with 93% confidence.",
+      "icon": "scan",
+      "read": false,
+      "ts": 1791376543469
+    },
+    {
+      "id": "n179099311985350d2",
+      "title": "New contact message",
+      "body": "Test User sent a message.",
+      "icon": "mail",
+      "read": false,
+      "ts": 1790993119853
+    },
+    {
+      "id": "n1790993119773hqvj",
+      "title": "Inventory updated",
+      "body": "Copper added (2.5 kg).",
+      "icon": "box",
+      "read": true,
+      "ts": 1790993119773
+    },
+    {
+      "id": "n1790993119728hbne",
+      "title": "New scan completed",
+      "body": "E-Waste detected with 96% confidence.",
+      "icon": "scan",
+      "read": true,
+      "ts": 1790993119728
+    },
+    {
+      "id": "n1789555553599zrid",
+      "title": "Inventory updated",
+      "body": "Brass added (3.2 kg).",
+      "icon": "box",
+      "read": true,
+      "ts": 1789555553599
+    },
+    {
+      "id": "n1789555544151n0lg",
+      "title": "New scan completed",
+      "body": "Brass detected with 94% confidence.",
+      "icon": "scan",
+      "read": true,
+      "ts": 1789555544151
+    },
+    {
+      "id": "n1789475562052uw2p",
+      "title": "New scan completed",
+      "body": "Paper detected with 95% confidence.",
+      "icon": "scan",
+      "read": true,
+      "ts": 1789475562052
+    },
+    {
+      "id": "n1",
+      "title": "New scan completed",
+      "body": "Aluminium detected with 94% confidence.",
+      "icon": "scan",
+      "read": true,
+      "ts": 1789473482551
+    },
+    {
+      "id": "n2",
+      "title": "Aluminium price updated",
+      "body": "Market rate moved to ₹180 / kg (+5.2%).",
+      "icon": "tag",
+      "read": true,
+      "ts": 1789470002551
+    },
+    {
+      "id": "n3",
+      "title": "Inventory reminder",
+      "body": "3 items haven't been reviewed this week.",
+      "icon": "box",
+      "read": true,
+      "ts": 1789466402551
+    },
+    {
+      "id": "n4",
+      "title": "Buyer interest received",
+      "body": "Green Scrap Traders viewed your Aluminium listing.",
+      "icon": "users",
+      "read": true,
+      "ts": 1789462802551
+    }
+  ],
+  "buyers": [
+    {
+      "id": "b1",
+      "name": "Green Scrap Traders",
+      "distance": "2.1 km away",
+      "materials": [
+        "Aluminium",
+        "Copper",
+        "Iron",
+        "Plastic"
+      ],
+      "rating": 4.5,
+      "reviews": 120,
+      "initials": "GS",
+      "phone": "+919876543210"
+    },
+    {
+      "id": "b2",
+      "name": "Shree Ram Recyclers",
+      "distance": "3.4 km away",
+      "materials": [
+        "Iron",
+        "Plastic",
+        "Paper",
+        "E-Waste"
+      ],
+      "rating": 4.2,
+      "reviews": 98,
+      "initials": "SR",
+      "phone": "+919876543211"
+    },
+    {
+      "id": "b3",
+      "name": "Eco Metal Buyers",
+      "distance": "4.6 km away",
+      "materials": [
+        "Copper",
+        "Aluminium",
+        "Brass"
+      ],
+      "rating": 4.7,
+      "reviews": 150,
+      "initials": "EM",
+      "phone": "+919876543212"
+    },
+    {
+      "id": "b4",
+      "name": "Bright Scrap Centre",
+      "distance": "5.2 km away",
+      "materials": [
+        "All Metal",
+        "Plastic"
+      ],
+      "rating": 4.1,
+      "reviews": 75,
+      "initials": "BS",
+      "phone": "+919876543213"
+    },
+    {
+      "id": "b5",
+      "name": "Metro Recyclers",
+      "distance": "6.0 km away",
+      "materials": [
+        "Paper",
+        "Plastic",
+        "E-Waste"
+      ],
+      "rating": 4.4,
+      "reviews": 64,
+      "initials": "MR",
+      "phone": "+919876543214"
+    },
+    {
+      "id": "b6",
+      "name": "Greenline Materials",
+      "distance": "7.2 km away",
+      "materials": [
+        "Metal",
+        "Industrial Scrap"
+      ],
+      "rating": 4.6,
+      "reviews": 88,
+      "initials": "GL",
+      "phone": "+919876543215"
+    }
+  ],
+  "pricing": [
+    {
+      "material": "Aluminium",
+      "pricePerKg": 180,
+      "changePercent": 5.2,
+      "trend": "up",
+      "updatedAt": "2026-09-15T12:00:02.551Z"
+    },
+    {
+      "material": "Copper",
+      "pricePerKg": 720,
+      "changePercent": 3.1,
+      "trend": "up",
+      "updatedAt": "2026-09-15T12:00:02.553Z"
+    },
+    {
+      "material": "Iron",
+      "pricePerKg": 40,
+      "changePercent": -1,
+      "trend": "down",
+      "updatedAt": "2026-09-15T12:00:02.553Z"
+    },
+    {
+      "material": "Brass",
+      "pricePerKg": 480,
+      "changePercent": 2.3,
+      "trend": "up",
+      "updatedAt": "2026-09-15T12:00:02.553Z"
+    },
+    {
+      "material": "Plastic",
+      "pricePerKg": 30,
+      "changePercent": 1.4,
+      "trend": "up",
+      "updatedAt": "2026-09-15T12:00:02.553Z"
+    },
+    {
+      "material": "Paper",
+      "pricePerKg": 15,
+      "changePercent": -0.5,
+      "trend": "down",
+      "updatedAt": "2026-09-15T12:00:02.553Z"
+    }
+  ],
+  "settings": [
+    {
+      "userId": 1,
+      "notifications": {
+        "pushScan": true,
+        "priceAlerts": true,
+        "invReminder": true
+      },
+      "preferences": {
+        "language": "English",
+        "currency": "INR",
+        "unit": "kg"
+      }
+    }
+  ],
+  "messages": [
+    {
+      "id": "m1790993119853",
+      "name": "Test User",
+      "email": "t@example.com",
+      "subject": "Hello",
+      "message": "This is a verification message from the harness.",
+      "ts": 1790993119853
+    }
+  ],
+  "uploads": [
+    {
+      "id": "u1791376543414",
+      "filename": "4a6ca43d0a536ddcb1ea8dc4.png",
+      "originalName": "Certificate.png",
+      "mimetype": "image/png",
+      "size": 143430,
+      "url": "/uploads/4a6ca43d0a536ddcb1ea8dc4.png",
+      "ts": 1791376543414
+    },
+    {
+      "id": "u1789555544059",
+      "filename": "b889909ad4b45b5568c8c2d6.jpg",
+      "originalName": "capture_1789555538231.jpg",
+      "mimetype": "image/jpeg",
+      "size": 138669,
+      "url": "/uploads/b889909ad4b45b5568c8c2d6.jpg",
+      "ts": 1789555544059
+    },
+    {
+      "id": "u1789475561989",
+      "filename": "7a5830bc8db21b52f9f119e1.jpg",
+      "originalName": "capture_1789475554481.jpg",
+      "mimetype": "image/jpeg",
+      "size": 150709,
+      "url": "/uploads/7a5830bc8db21b52f9f119e1.jpg",
+      "ts": 1789475561989
+    }
+  ]
+}
