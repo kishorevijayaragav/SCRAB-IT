@@ -1,8 +1,9 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/utils/formatters.dart';
+import '../../models/pricing_model.dart';
 import '../../providers/auth_provider.dart';
 import '../../providers/history_provider.dart';
 import '../../providers/inventory_provider.dart';
@@ -69,6 +70,10 @@ class _HomeScreenState extends State<HomeScreen> {
               _buildQuickAccessGrid(),
               const SizedBox(height: 24),
 
+              // Live Pricing Section
+              _buildLivePricingSection(),
+              const SizedBox(height: 24),
+
               // Recent Activity Strip
               if (history.recentActivity.isNotEmpty) ...[
                 Row(
@@ -132,6 +137,205 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
+      ),
+    );
+  }
+  Widget _buildLivePricingSection() {
+    final pricingProv = context.watch<PricingProvider>();
+    final items = pricingProv.pricing;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _buildSectionTitle(
+          title: 'Live Pricing',
+          subtitle: 'Market scrap prices · Chennai',
+        ),
+        const SizedBox(height: 12),
+
+        // Countdown Banner
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+          decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              colors: [Color(0xFF0F3821), Color(0xFF168A42)],
+            ),
+            borderRadius: BorderRadius.circular(16),
+            boxShadow: [
+              BoxShadow(
+                color: AppColors.green.withValues(alpha: 0.2),
+                blurRadius: 12,
+                offset: const Offset(0, 4),
+              ),
+            ],
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'PRICES UPDATE IN',
+                      style: TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 1.5,
+                        color: Colors.white.withValues(alpha: 0.8),
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      pricingProv.formattedCountdown,
+                      style: const TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w900,
+                        letterSpacing: 2.0,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.15),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Icon(
+                  Icons.trending_up_rounded,
+                  color: Colors.white,
+                  size: 22,
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 12),
+
+        // Price List Card
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: AppColors.line),
+          ),
+          padding: const EdgeInsets.all(14),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Row(
+                children: [
+                  Icon(Icons.show_chart_rounded, size: 16, color: AppColors.green),
+                  SizedBox(width: 6),
+                  Text(
+                    'Chennai market estimates',
+                    style: TextStyle(
+                      fontSize: 13.5,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.ink,
+                    ),
+                  ),
+                ],
+              ),
+              const Text(
+                'Indicative rates per kilogram.',
+                style: TextStyle(fontSize: 11, color: AppColors.muted),
+              ),
+              const SizedBox(height: 10),
+              const Divider(height: 1),
+
+              if (pricingProv.isLoading)
+                const Padding(
+                  padding: EdgeInsets.all(24),
+                  child: Center(child: CircularProgressIndicator(color: AppColors.green)),
+                )
+              else if (items.isEmpty)
+                const Padding(
+                  padding: EdgeInsets.all(24),
+                  child: Center(
+                    child: Text(
+                      'Pricing unavailable.',
+                      style: TextStyle(color: AppColors.muted, fontSize: 13),
+                    ),
+                  ),
+                )
+              else
+                ListView.separated(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: items.length,
+                  separatorBuilder: (_, __) => const Divider(height: 1),
+                  itemBuilder: (context, i) => _buildPriceRow(items[i]),
+                ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildPriceRow(PricingModel p) {
+    final isUp = p.isUp;
+    final trendColor = isUp ? AppColors.success : AppColors.danger;
+    final trendArrow = isUp ? '↑' : '↓';
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Row(
+        children: [
+          MaterialArtBadge(material: p.material, size: 38),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  p.material,
+                  style: const TextStyle(
+                    fontSize: 13.5,
+                    fontWeight: FontWeight.w700,
+                    color: AppColors.ink,
+                  ),
+                ),
+                const Text(
+                  'Updated today',
+                  style: TextStyle(fontSize: 10.5, color: AppColors.muted),
+                ),
+              ],
+            ),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Text(
+                '₹${p.pricePerKg.round()} / kg',
+                style: const TextStyle(
+                  fontSize: 13.5,
+                  fontWeight: FontWeight.w800,
+                  color: AppColors.ink,
+                ),
+              ),
+              const SizedBox(height: 2),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                decoration: BoxDecoration(
+                  color: trendColor.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: Text(
+                  '$trendArrow ${p.changePercent.abs().toStringAsFixed(1)}%',
+                  style: TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w700,
+                    color: trendColor,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
@@ -290,14 +494,6 @@ class _HomeScreenState extends State<HomeScreen> {
         const Color(0xFFFBF4E9),
         AppColors.warning,
         () => context.go('/buyers'),
-      ),
-      (
-        'Live Pricing',
-        'Market rates',
-        Icons.trending_up_rounded,
-        const Color(0xFFEDF8F1),
-        AppColors.success,
-        () => context.push('/pricing'),
       ),
       (
         'History',

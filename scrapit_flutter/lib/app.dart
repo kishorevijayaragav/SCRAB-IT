@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import 'core/theme/app_theme.dart';
@@ -10,7 +10,6 @@ import 'screens/scanner/scanner_screen.dart';
 import 'screens/scanner/scan_result_screen.dart';
 import 'screens/inventory/inventory_screen.dart';
 import 'screens/buyers/buyers_screen.dart';
-import 'screens/pricing/pricing_screen.dart';
 import 'screens/history/history_screen.dart';
 import 'screens/contact/contact_screen.dart';
 import 'screens/settings/settings_screen.dart';
@@ -103,10 +102,6 @@ class _ScrapItAppState extends State<ScrapItApp> {
         GoRoute(
           path: '/results',
           builder: (context, state) => const ScanResultScreen(),
-        ),
-        GoRoute(
-          path: '/pricing',
-          builder: (context, state) => const PricingScreen(),
         ),
         GoRoute(
           path: '/history',
